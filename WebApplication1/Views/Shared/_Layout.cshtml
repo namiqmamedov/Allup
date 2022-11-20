@@ -1,5 +1,7 @@
-﻿@{ 
-    List<Setting> settings = ViewBag.Settings;
+﻿@inject ILayoutServices layoutservices
+
+@{ 
+    Dictionary<string,string> settings = await layoutservices.GetSettingsAsync();
 }
 
 <!doctype html>
@@ -50,7 +52,7 @@
     <!--====== PRELOADER PART START ======-->
 
     <div id="preloader">
-        <div class="preloader">
+        <div class="prel oader">
             <span></span>
             <span></span>
         </div>
@@ -65,8 +67,7 @@
                 <div class="container-fluid custom-container">
                     <div class="header-nav-wrapper d-flex justify-content-between">
                         <div class="header-static-nav">
-                            @Html.Raw(settings.FirstOrDefault(s => s.Key == "Slogan").Value);
-                            <p>Get FREE Shipping with <span class="text">$35!</span> Code: FREESHIPPING</p>
+                            @Html.Raw(settings.FirstOrDefault(s => s.Key == "Slogan").Value)
                         </div>
                         <div class="header-menu-nav">
                             <ul class="menu-nav">
@@ -1264,10 +1265,10 @@
                             <h4 class="footer-title">Contact Details</h4>
 
                             <ul>
-                                <li><i class="fas fa-map-marker-alt"></i> 45 Grand Central Terminal New York,NY 1017 United State USA</li>
-                                <li><i class="fas fa-phone"></i> <a href="tell:123-456-789">+123 456 789</a></li>
-                                <li><i class="fas fa-envelope"></i><a href="mailto://email@yourwebsitename.com">email@yourwebsitename.com</a></li>
-                                <li><i class="far fa-clock"></i> Mon-Sat 9:00pm - 5:00pm Sun:Closed</li>
+                                <li><i class="fas fa-map-marker-alt"></i>@settings.FirstOrDefault(s =>s.Key == "Address").Value</li>
+                                <li><i class="fas fa-phone"></i> <a href="tell:@(settings.FirstOrDefault(s =>s.Key == "Phone").Value)">@settings.FirstOrDefault(s => s.Key == "Phone").Value</a></li>
+                                <li><i class="fas fa-envelope"></i><a href="mailto://@(settings.FirstOrDefault(s =>s.Key == "Email").Value)">@settings.FirstOrDefault(s => s.Key == "Email").Value</a></li>
+                                <li><i class="far fa-clock"></i>@settings.FirstOrDefault(s => s.Key == "WorkHours").Value</li>
                             </ul>
                         </div> <!-- footer contact -->
                     </div>
