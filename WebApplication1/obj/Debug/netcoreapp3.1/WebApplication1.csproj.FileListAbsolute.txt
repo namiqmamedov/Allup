@@ -145,3 +145,4 @@ C:\Users\ACER\source\repos\C#\WebApplication1\WebApplication1\obj\Debug\netcorea
 C:\Users\ACER\source\repos\C#\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorTargetAssemblyInfo.cs
 C:\Users\ACER\source\repos\C#\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.Views.pdb
 C:\Users\ACER\source\repos\C#\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\ACER\source\repos\C#\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_IndexPartial.cshtml.g.cs
