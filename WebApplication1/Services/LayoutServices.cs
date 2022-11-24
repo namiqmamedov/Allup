@@ -16,6 +16,11 @@ namespace WebApplication1.Services
         {
             _context = context;
         }
+        
+        public async Task<IEnumerable<Category>> GetCategoriesAsync()
+        {
+            return await _context.Categories.Include(c => c.Children).Where(c=>c.IsDeleted == false && c.IsMain).ToListAsync();
+        }
 
         public async Task<Dictionary<string,string>> GetSettingsAsync()
         { 
