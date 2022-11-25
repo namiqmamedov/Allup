@@ -1,4 +1,42 @@
 ﻿$(document).ready(() => {
+<<<<<<< HEAD
+=======
+    $(".modalBtn").click(function (e) {
+        e.preventDefault();
+
+        let url = $(this).attr("href");
+
+        fetch(url)
+            .then(res => {
+                return res.text();
+            })
+            .then(data => {
+                $(".modal .modal-dialog .modal-content .modal-body").html(data);
+                $("modal").show();
+
+                $('.quick-view-image').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: false,
+                    fade: true,
+                    asNavFor: '.quick-view-thumb',
+                    speed: 400,
+                });
+
+                $('.quick-view-thumb').slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    asNavFor: '.quick-view-image',
+                    dots: false,
+                    arrows: false,
+                    focusOnSelect: true,
+                    speed: 400,
+                });
+            })
+    })
+
+>>>>>>> 176c302 (refactor:update modal with shop controller)
     $(".srcBtn").click(() => {
         let srcInput = $(".srcInput").val();
         let srcCategory = $(".srcCategory option:selected").val();

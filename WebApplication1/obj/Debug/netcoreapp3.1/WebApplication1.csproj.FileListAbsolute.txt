@@ -155,3 +155,7 @@ C:\Users\ACER\source\repos\C#\WebApplication1\WebApplication1\bin\Debug\netcorea
 C:\Users\ACER\source\repos\C#\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\ACER\source\repos\C#\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\ACER\source\repos\C#\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SearchPartial.cshtml.g.cs
+<<<<<<< HEAD
+=======
+C:\Users\ACER\source\repos\C#\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductModalPartial.cshtml.g.cs
+>>>>>>> 176c302 (refactor:update modal with shop controller)

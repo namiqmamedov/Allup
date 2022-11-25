@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplication1.DAL;
 
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221124004346_UpdateProductsTable")]
+    partial class UpdateProductsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -168,10 +170,6 @@ namespace WebApplication1.Migrations
                         .HasMaxLength(255);
 
                     b.Property<double>("Price")
-<<<<<<< HEAD
-                        .HasColumnName("money")
-=======
->>>>>>> 176c302 (refactor:update modal with shop controller)
                         .HasColumnType("float");
 
                     b.Property<string>("Seria")
