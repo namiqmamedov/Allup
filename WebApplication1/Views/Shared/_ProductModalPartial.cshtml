@@ -3,16 +3,13 @@
 <div class="row">
     <div class="col-md-6">
         <div class="product-quick-view-image mt-30">
-            <div class="quick-view-image">
-                <div class="single-view-image">
+            <div class="quick-view-image">             
                    @foreach (ProductImage productImage in Model.ProductImages)
                    {
                        <div class="single-view-image">
                             <img src="~/assets/images/product/@productImage.Name" alt="product">
                        </div>
-
-                   }
-                </div>
+                   }     
             </div>
             <ul class="quick-view-thumb">
                 @foreach (ProductImage productImage in Model.ProductImages)
@@ -49,13 +46,13 @@
                 }
                 else
                 {
-            <span class="regular-price"> €@Model.Price.ToString("0.##")</span>
+                    <span class="regular-price"> €@Model.Price.ToString("0.##")</span>
                 }
 
 
 
             </div>
-            <p class="product-description">Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. <br> Part of the Kaval Collection. <br> Regular fit is eased, but not sloppy, and perfect for any activity. <br> Plain-woven jacket specifically constructed for freedom of movement.</p>
+            <p class="product-description">@Model.Description</p>
             <div class="product-size-color flex-wrap">
                 <div class="product-size">
                     <h5 class="title">Size</h5>

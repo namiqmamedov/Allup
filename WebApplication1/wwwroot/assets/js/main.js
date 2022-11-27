@@ -624,9 +624,7 @@ $(function() {
     });
     
     
-    //===== slick Slider Product Quick View
     
-<<<<<<< HEAD
     $('.quick-view-image').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -646,7 +644,7 @@ $(function() {
         focusOnSelect: true,
         speed: 400,
     });
-=======
+
     //$('.quick-view-image').slick({
     //    slidesToShow: 1,
     //    slidesToScroll: 1,
@@ -666,7 +664,6 @@ $(function() {
     //    focusOnSelect: true,
     //    speed: 400,
     //});
->>>>>>> 176c302 (refactor:update modal with shop controller)
     
     
     //===== slick Slider Product Quick View

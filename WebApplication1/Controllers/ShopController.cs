@@ -70,8 +70,7 @@ namespace WebApplication1.Controllers
 
             return PartialView("_SearchPartial", products);
         }
-<<<<<<< HEAD
-=======
+
 
 
         public async Task<IActionResult> Modal(int? id)
@@ -81,6 +80,5 @@ namespace WebApplication1.Controllers
             return PartialView("_ProductModalPartial",product);
         }
 
->>>>>>> 176c302 (refactor:update modal with shop controller)
     }
 }

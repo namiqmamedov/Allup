@@ -11,11 +11,8 @@ namespace WebApplication1.Models
     {
         [StringLength(255)]
         public string  Title { get; set; }
-<<<<<<< HEAD
-        [Column("money")]
-=======
-        [DataType("money")]
->>>>>>> 176c302 (refactor:update modal with shop controller)
+
+        [Column("Money")]
         public double Price { get; set; }
         public double DiscountedPrice { get; set; }
         public double ExTax { get; set; }

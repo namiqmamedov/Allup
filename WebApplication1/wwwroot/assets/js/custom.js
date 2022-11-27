@@ -1,6 +1,22 @@
 ﻿$(document).ready(() => {
-<<<<<<< HEAD
-=======
+
+    $(".addtobasket").click(function (e) {
+        e.preventDefault();
+
+        let url = $(this).attr("href");
+
+        fetch(url)
+            .then(res => {
+                if (res.ok) {
+                    alert("Added")
+                } else if (res.status == 404) {
+                    alert(res.statusText);
+                } else if (res.status == 400) {
+                    alert(res.statusText)
+                }
+            })
+    })
+
     $(".modalBtn").click(function (e) {
         e.preventDefault();
 
@@ -36,7 +52,6 @@
             })
     })
 
->>>>>>> 176c302 (refactor:update modal with shop controller)
     $(".srcBtn").click(() => {
         let srcInput = $(".srcInput").val();
         let srcCategory = $(".srcCategory option:selected").val();

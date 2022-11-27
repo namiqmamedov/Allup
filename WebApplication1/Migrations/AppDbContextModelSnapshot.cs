@@ -168,10 +168,9 @@ namespace WebApplication1.Migrations
                         .HasMaxLength(255);
 
                     b.Property<double>("Price")
-<<<<<<< HEAD
+
                         .HasColumnName("money")
-=======
->>>>>>> 176c302 (refactor:update modal with shop controller)
+
                         .HasColumnType("float");
 
                     b.Property<string>("Seria")

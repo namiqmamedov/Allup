@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,5 +36,52 @@ namespace WebApplication1.Controllers
 
             return View(homeVM);
         }
+
+
+        // obyekti cookiede saxlamaq ucun
+        public async Task<IActionResult> SetCookie()
+        {
+            Product product = await _context.Products.FirstAsync();
+
+            string cookie = JsonConvert.SerializeObject(product);
+
+            HttpContext.Response.Cookies.Append("basket", cookie);
+
+            return Ok();
+        }
+
+
+        public async Task<IActionResult> GetCookie()
+        {
+            string cookie = HttpContext.Request.Cookies["basket"];
+
+            return Json(cookie);
+        }
+
+        //public async Task<IActionResult> SetCookie()
+        //{
+        //    HttpContext.Response.Cookies.Append("ZIP","Cookie");
+
+        //    return RedirectToAction(nameof(Index));
+        //}
+
+        //public async Task<IActionResult> GetCookie()
+        //{
+        //    return Content(HttpContext.Request.Cookies["ZIP"]);
+        //}
+
+        //public async Task<IActionResult> SetSession()
+        //{
+        //    HttpContext.Session.SetString("ZIP", "Session");
+
+        //    return RedirectToAction(nameof(Index));
+        //}
+
+        //public async Task<IActionResult> GetSession()
+        //{
+        //    //HttpContext.Session.GetString("ZIP", "Session");
+
+        //    return Content(HttpContext.Session.GetString("ZIP"));
+        //}
     }
 }

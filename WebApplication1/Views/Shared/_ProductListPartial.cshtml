@@ -14,15 +14,12 @@
                                 <img class="second-image" src="assets/images/product/@product.HoverImage" alt="product">
                             </a>
                             <ul class="product-meta">
-                                <li><a href="#"><i class="icon ion-bag"></i></a></li>
+                                <li><a class="addtobasket" asp-controller="basket" asp-action="addtobasket" asp-route-id="@product.Id"><i class="icon ion-bag"></i></a></li>
                                 <li><a href="#"><i class="icon ion-android-favorite-outline"></i></a></li>
                                 <li><a href="#"><i class="icon ion-android-options"></i></a></li>
-<<<<<<< HEAD
-                                <li><a data-toggle="modal" data-target="#productQuickModal" href="#"><i class="icon ion-android-open"></i></a></li>
-=======
                                 <li><a data-toggle="modal" class="modalBtn" data-target="#productQuickModal" asp-controller="shop" asp-action="modal"
                                 asp-route-id="@product.Id" ><i class="icon ion-android-open"></i></a></li>
->>>>>>> 176c302 (refactor:update modal with shop controller)
+
                             </ul>
                             @if (product.DiscountedPrice > 0)
                             {
@@ -41,18 +38,9 @@
                                 <li class="rating-on"><i class="fas fa-star"></i></li>
                             </ul>
                             <h4 class="product-title"><a href="single-product.html">@product.Title</a></h4>
-<<<<<<< HEAD
-                            @if (product.DiscountedPrice > 0)
-                            {
-                                <span class="regular-price ">@product.Price</span>
-                                <span class="price-sale">@product.DiscountedPrice</span>
-                            }
-                            else
-                            {
-                                <span class="price-sale">@product.Price</span>
 
-                            }
-=======
+                            
+
                             <div class="product-price">
                                 @if (product.DiscountedPrice > 0)
                                 {
@@ -65,7 +53,7 @@
                                 }
                             </div>
                            
->>>>>>> 176c302 (refactor:update modal with shop controller)
+
                         </div>
                     </div>
                 }
