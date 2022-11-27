@@ -7,15 +7,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.DAL;
 using WebApplication1.Models;
+using WebApplication1.ViewModels.Basket;
+
 
 namespace WebApplication1.Controllers
 {
     public class BasketController : Controller
     {
         private readonly AppDbContext _context;
-
-        public object JsonConver { get; private set; }
-
         public BasketController(AppDbContext context)
         {
             _context = context;
@@ -29,35 +28,65 @@ namespace WebApplication1.Controllers
         {
             if (id == null)
             {
-                return BadRequest("Id don't a null");
+                return BadRequest("Id not a null");
             }
 
-            Product product = await _context.Products.FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
+            //Product product = await _context.Products.FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
 
-            if (product == null)
+            if (!await _context.Products.AnyAsync(p=>p.IsDeleted == false && p.Id == id))
             {
                 return NotFound("Id Not Correct");
             }
 
-            List<Product> products = new List<Product>();
-            products.Add(product);
+            string basket = HttpContext.Request.Cookies["basket"]; // cookie datasini vermesi ucun
+                                                                   // basket deyerini stringe verir
+
+            List<BasketVM> products = null;
+            if (!string.IsNullOrWhiteSpace(basket)) // varsa eger cookie ye dussun deye
+            {
+                products = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+                BasketVM basketVM = products.Find(p => p.Id == id);
+                if (basketVM != null)
+                {
+                    basketVM.Count += 1;
+                }
+                else
+                {
+                    basketVM = new BasketVM
+                    {
+                        Id = (int)id, //nullable olaraq yox int olaraq casting elesin deye
+                        Count = 1
+                    };
+
+                    products.Add(basketVM);
+                }
+            }
+
+            else  // bele bir basket yoxdursa
+            {
+                products = new List<BasketVM>();
+                BasketVM basketVM = new BasketVM
+                {
+                    Id = (int)id,
+                    Count = 1
+                };
+                products.Add(basketVM);
+            }
 
 
-            string pro = JsonConvert.SerializeObject(product);
-
-            HttpContext.Response.Cookies.Append("basket", pro);
-
+            basket = JsonConvert.SerializeObject(products);
+            HttpContext.Response.Cookies.Append("basket", basket);      
 
             return RedirectToAction("Index","Home");
         }
 
         public async Task<IActionResult> GetFromBasket()
         {
-            string pro = HttpContext.Request.Cookies["basket"];
+            string basket = HttpContext.Request.Cookies["basket"];
 
-            List<Product> product = JsonConvert.DeserializeObject<List<Product>>(pro);
+            List<BasketVM> products = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
 
-            return Json(product);
+            return Json(products);
         }
     }
 }

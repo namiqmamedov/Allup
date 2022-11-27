@@ -1,4 +1,5 @@
-﻿$(document).ready(() => {
+﻿
+$(document).ready(() => {
 
     $(".addtobasket").click(function (e) {
         e.preventDefault();
@@ -15,6 +16,7 @@
                     alert(res.statusText)
                 }
             })
+ 
     })
 
     $(".modalBtn").click(function (e) {
