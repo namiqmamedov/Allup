@@ -12,30 +12,32 @@ $(document).ready(() => {
             })
             .then(data => {
                 $(".header-cart").html(data);
-            })     
+            })
     })
 
-    function ready() {
+    $(document).on('click', ".single-cart-item", function () {
+        $(this).parent().remove();
+        updateTotal();
+    });
 
-        // Remove Cart
-        var removeCartButtons = document.getElementsByClassName('product-close')
-        console.log(removeCartButtons)
-        for (var i = 0; i < removeCartButtons.length; i++) {
-            var button = removeCartButtons[i]
-            button.addEventListener("click", removeCartItem);
+
+    function updateTotal() {
+        var cartContent = document.getElementsByClassName("single-cart-item")[0]
+        var basketBoxes = single - cart - item.getElementsByClassName("cart-item-thumb");
+        var total = 0;
+        for (var i = 0; i < basketBoxes.length; i++) {
+            var basketBox = basketBoxes[i];
+            var priceElement = basketBox.getElementsByClassName("product-price")[0];
+            var quantityElement = basketBox.getElementsByClassName("product-quantity")[0];
+            var price = parseFloat(priceElement.innerText.replace("$", ""));
+            var quantity = quantityElement.value;
+            total = total + price * quantity;
+
+            document.getElementsByClassName("value")[0].innerHTML = "$" + total;
         }
-
-        
     }
 
-    ready();
 
-    function removeCartItem(event) {
-        var buttonClicked = event.target;
-        buttonClicked.parentElement.remove();
-       
-    }
-    
 
 
     $(".modalBtn").click(function (e) {
@@ -110,7 +112,7 @@ $(document).ready(() => {
         }
     })
 
-    
+
     $(".srcInput").keyup(function () {
 
         let inputVal = $(this).val();
@@ -122,4 +124,31 @@ $(document).ready(() => {
     })
 
 
- })
+})
+
+
+
+
+
+//function ready() {
+
+//    // Remove Cart
+//    let removeCartButtons = document.querySelectorAll(".fa-times");
+//    console.log(removeCartButtons);
+//    removeCartButtons.forEach(btn => {
+//        btn.addEventListener("click", handle_removeCartItem);
+//    });
+//}
+
+//ready();
+
+//function handle_removeCartItem() {
+//    this.parentElement.remove();
+//}
+
+
+
+function deleteItem(id) {
+    var ipt = $("[name=removefromcart][value=" + id.toString() + "]");
+    ipt.attr('checked', true);
+}
