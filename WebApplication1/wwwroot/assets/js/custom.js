@@ -8,16 +8,35 @@ $(document).ready(() => {
 
         fetch(url)
             .then(res => {
-                if (res.ok) {
-                    alert("Added")
-                } else if (res.status == 404) {
-                    alert(res.statusText);
-                } else if (res.status == 400) {
-                    alert(res.statusText)
-                }
+                return res.text();
             })
- 
+            .then(data => {
+                $(".header-cart").html(data);
+            })     
     })
+
+    function ready() {
+
+        // Remove Cart
+        var removeCartButtons = document.getElementsByClassName('product-close')
+        console.log(removeCartButtons)
+        for (var i = 0; i < removeCartButtons.length; i++) {
+            var button = removeCartButtons[i]
+            button.addEventListener("click", removeCartItem);
+        }
+
+        
+    }
+
+    ready();
+
+    function removeCartItem(event) {
+        var buttonClicked = event.target;
+        buttonClicked.parentElement.remove();
+       
+    }
+    
+
 
     $(".modalBtn").click(function (e) {
         e.preventDefault();

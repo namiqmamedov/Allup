@@ -47,8 +47,15 @@ using WebApplication1.ViewModels.Shop;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 7 "C:\Users\ACER\Desktop\New folder\WebApplication1\Views\_ViewImports.cshtml"
+using WebApplication1.ViewModels.Basket;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"99fbd04bf8d8da6da98f58fe9bb43432dd3f2e54", @"/Views/Shared/_ProductModalPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"891a3def44b08762d69268b4783c0addbcf2984d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3f4548d69949b1e6a13d6f81886e6183e185978e", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__ProductModalPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Product>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("alt", new global::Microsoft.AspNetCore.Html.HtmlString("product"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -92,7 +99,7 @@ using WebApplication1.ViewModels.Shop;
 #line hidden
 #nullable disable
             WriteLiteral("                       <div class=\"single-view-image\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "99fbd04bf8d8da6da98f58fe9bb43432dd3f2e546299", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "99fbd04bf8d8da6da98f58fe9bb43432dd3f2e546496", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -133,7 +140,7 @@ AddHtmlAttributeValue("", 396, productImage.Name, 396, 18, false);
 #line hidden
 #nullable disable
             WriteLiteral("                    <li>\r\n                        <div class=\"single-thumb\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "99fbd04bf8d8da6da98f58fe9bb43432dd3f2e548633", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "99fbd04bf8d8da6da98f58fe9bb43432dd3f2e548830", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -252,7 +259,7 @@ AddHtmlAttributeValue("", 790, productImage.Name, 790, 18, false);
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n            <div class=\"product-size-color flex-wrap\">\r\n                <div class=\"product-size\">\r\n                    <h5 class=\"title\">Size</h5>\r\n                    <select>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99fbd04bf8d8da6da98f58fe9bb43432dd3f2e5414300", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99fbd04bf8d8da6da98f58fe9bb43432dd3f2e5414497", async() => {
                 WriteLiteral("S");
             }
             );
@@ -268,7 +275,7 @@ AddHtmlAttributeValue("", 790, productImage.Name, 790, 18, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99fbd04bf8d8da6da98f58fe9bb43432dd3f2e5415479", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99fbd04bf8d8da6da98f58fe9bb43432dd3f2e5415676", async() => {
                 WriteLiteral("M");
             }
             );
@@ -284,7 +291,7 @@ AddHtmlAttributeValue("", 790, productImage.Name, 790, 18, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99fbd04bf8d8da6da98f58fe9bb43432dd3f2e5416658", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99fbd04bf8d8da6da98f58fe9bb43432dd3f2e5416855", async() => {
                 WriteLiteral("L");
             }
             );
@@ -300,7 +307,7 @@ AddHtmlAttributeValue("", 790, productImage.Name, 790, 18, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99fbd04bf8d8da6da98f58fe9bb43432dd3f2e5417837", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99fbd04bf8d8da6da98f58fe9bb43432dd3f2e5418034", async() => {
                 WriteLiteral("XL");
             }
             );

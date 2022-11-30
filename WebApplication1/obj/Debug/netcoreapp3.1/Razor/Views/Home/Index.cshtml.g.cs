@@ -47,8 +47,15 @@ using WebApplication1.ViewModels.Shop;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 7 "C:\Users\ACER\Desktop\New folder\WebApplication1\Views\_ViewImports.cshtml"
+using WebApplication1.ViewModels.Basket;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"225794e3381fb3e6308091dd76fcd5bc7ace70e9", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"891a3def44b08762d69268b4783c0addbcf2984d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3f4548d69949b1e6a13d6f81886e6183e185978e", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<HomeVM>
     {
         #pragma warning disable 1998

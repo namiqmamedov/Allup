@@ -75,18 +75,29 @@ namespace WebApplication1.Controllers
 
 
             basket = JsonConvert.SerializeObject(products);
-            HttpContext.Response.Cookies.Append("basket", basket);      
+            HttpContext.Response.Cookies.Append("basket", basket);
 
-            return RedirectToAction("Index","Home");
+            foreach (BasketVM basketVM in products)
+            {
+                Product product =  await _context.Products.
+                    FirstOrDefaultAsync(p => p.Id == basketVM.Id && p.IsDeleted == false);
+
+                basketVM.Title = product.Title;
+                basketVM.Image = product.MainImage;
+                basketVM.ExTax = product.ExTax;
+                basketVM.Price = product.DiscountedPrice > 0 ? product.DiscountedPrice : product.Price;
+            }
+
+            return PartialView("_BasketListPartial",products);
         }
 
-        public async Task<IActionResult> GetFromBasket()
-        {
-            string basket = HttpContext.Request.Cookies["basket"];
+        //public async Task<IActionResult> GetFromBasket()
+        //{
+        //    string basket = HttpContext.Request.Cookies["basket"];
 
-            List<BasketVM> products = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+        //    List<BasketVM> products = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
 
-            return Json(products);
-        }
+        //    return Json(products);
+        //}
     }
 }
