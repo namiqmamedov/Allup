@@ -137,8 +137,6 @@ C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\WebAppl
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorAssemblyInfo.cache
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorAssemblyInfo.cs
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\staticwebassets\WebApplication1.StaticWebAssets.Manifest.cache
-C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\staticwebassets\WebApplication1.StaticWebAssets.xml
-C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\scopedcss\bundle\WebApplication1.styles.css
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.TagHelpers.input.cache
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.TagHelpers.output.cache
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorCoreGenerate.cache
@@ -157,3 +155,12 @@ C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\WebAppl
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.genruntimeconfig.cache
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductListPartial.cshtml.g.cs
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BasketListPartial.cshtml.g.cs
+C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\staticwebassets\WebApplication1.StaticWebAssets.xml
+C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\scopedcss\bundle\WebApplication1.styles.css
+C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
+C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
+C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\_ViewStart.cshtml.g.cs
+C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\_ViewImports.cshtml.g.cs
+C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Dashboard\Index.cshtml.g.cs
+C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Brand\Index.cshtml.g.cs

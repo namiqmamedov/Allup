@@ -24,8 +24,8 @@ namespace WebApplication1.Services
 
         public async Task<IEnumerable<BasketVM>> GetBasketAsync()
         {
-            string basket = _httpContextAccessor.HttpContext.Request.Cookies["bakset"];
-            List<BasketVM> basketVMs = null; // basket deyeri yoxdusa bost list versin
+            string basket = _httpContextAccessor.HttpContext.Request.Cookies["basket"];
+            List<BasketVM> basketVMs = null; // basket deyeri yoxdusa bos list versin
 
             if (!string.IsNullOrWhiteSpace(basket))
             {
