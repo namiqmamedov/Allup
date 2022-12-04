@@ -1,0 +1,16 @@
+﻿@model Brand
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<div class="mb-3">
+    <form method="post">
+        <label asp-for="Name" for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input asp-for="Name" class="form-control" id="exampleFormControlInput1" placeholder="unnamed@example.com">
+        <span asp-validation-for="Name"></span>
+    </form>
+    <a href="#">CLICK ME </a>
+   
+</div>
+

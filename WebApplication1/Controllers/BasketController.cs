@@ -91,6 +91,9 @@ namespace WebApplication1.Controllers
             return PartialView("_BasketListPartial",products);
         }
 
+
+        
+
         //public async Task<IActionResult> GetFromBasket()
         //{
         //    string basket = HttpContext.Request.Cookies["basket"];

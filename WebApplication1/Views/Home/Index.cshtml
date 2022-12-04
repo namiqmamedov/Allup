@@ -6,27 +6,7 @@
 
 <!--====== Slider Part Start ======-->
 
-<section class="slider-area slider-active">
-    @foreach (Slider slider in Model.Sliders)
-    {
-        <div class="single-slider">
-            <div class="slider-image">
-                <img src="assets/images/@slider.Image" alt="slider">
-            </div>
-            <div class="slider-content-wrapper">
-                <div class="container-fluid custom-container">
-                    <div class="slider-content">
-                        <h4 data-animation="fadeInDown" data-delay="0.5s" class="sub-title">@slider.SubTitle</h4>
-                        <h1 data-animation="fadeInLeft" data-delay="0.5s" class="main-title ">@Html.Raw(slider.MainTitle)</h1>
-                        <p data-animation="fadeInRightBig" data-delay="0.5s">@slider.Description</p>
-                        <a data-animation="zoomIn" data-delay="0.5s" class="main-btn " href="@slider.PageLink">Shop Now</a>
-                    </div>
-                </div> <!-- container -->
-            </div>
-        </div> <!-- single slider -->
-    }
-
-</section>
+@await Component.InvokeAsync("Slider", Model)
 
 <!--====== Slider Part Ends ======-->
 <!--====== Banner Part Start ======-->
@@ -51,39 +31,12 @@
 <!--====== Banner Part Ends ======-->
 <!--====== Category Part Start ======-->
 
-<section class="category-area category-bg pt-100 pb-100">
-    <div class="container-fluid custom-container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="section-title text-center pb-30">
-                    <h2 class="title">Featured Categories</h2>
-                </div>
-            </div>
-        </div> <!-- row -->
-        <div class="row category-active">
-            @for (int i = 0; i < (int)Math.Ceiling((decimal)Model.Categories.Count() / 2); i++)
-            {
-                <div class="col-lg-2">
-                    @foreach (Category category in Model.Categories.Skip(i * 2).Take(2))
-                    {
-                        <div class="single-category text-center">
-                            <a target="_blank" href="shop-left-sidebar.html">
-                                <img src="assets/images/@category.Image" alt="category">
-                                <p>@category.Name</p>
-                            </a>
-                        </div>
-                    }
-                </div>
-            }
-
-
-
-        </div> <!-- row -->
-    </div> <!-- container -->
-</section>
+@await Component.InvokeAsync("Category", Model)
 
 <!--====== Category Part Ends ======-->
 <!--====== Product Part Start ======-->
+
+@*@await Component.InvokeAsync("Product", Model)*@
 
 <section class="product-area pt-100 pb-100">
     <div class="container-fluid custom-container">
@@ -106,7 +59,7 @@
         </div> <!-- row -->
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="new-tab">
-                @await Html.PartialAsync("_ProductListPartial",Model.NewArrival)
+                @await Html.PartialAsync("_ProductListPartial", Model.NewArrival)
             </div>
             <div class="tab-pane fade" id="bestseller" role="tabpanel" aria-labelledby="bestseller-tab">
                 @await Html.PartialAsync("_ProductListPartial", Model.BestSeller)
