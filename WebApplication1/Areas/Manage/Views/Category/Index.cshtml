@@ -39,7 +39,7 @@
                         <td>@category.Products.Count()</td>
                         <td>@category.CreatedAt?.ToString("dd / MM / yyyy")</td>
                         <td>
-                            <a class="btn btn-warning">Update</a>
+                            <a class="btn btn-warning" asp-area="manage" asp-controller="category" asp-action="update" asp-route-id="@category.Id">Update</a>
                             <a class="btn btn-danger">Delete</a>
                             <a class="btn btn-primary">Detail</a>
                         </td>
