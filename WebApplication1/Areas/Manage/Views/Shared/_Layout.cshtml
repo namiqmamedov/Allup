@@ -18,11 +18,16 @@
 
     <!-- Custom styles for this template--> 
     <link href="~/manage/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.css" rel="stylesheet" />
 
 </head>
 
 <body id="page-top">
 
+    @if (TempData["Error"] != null)
+    {
+        <input type="hidden" id="errorInput" value="@(TempData["Error"])"/>
+    }
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -429,8 +434,10 @@
     <!-- Bootstrap core JavaScript-->
     <script src="~/manage/vendor/jquery/jquery.min.js"></script>
     <script src="~/manage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-   
-    @RenderSection("script",false) // her sehifede mecbur elemesin (false)
+
+    @RenderSection("script", false) // her sehifede mecbur elemesin (false)
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" rel="stylesheet" />
     <!-- Core plugin JavaScript-->
     <script src="~/manage/vendor/jquery-easing/jquery.easing.min.js"></script>
 

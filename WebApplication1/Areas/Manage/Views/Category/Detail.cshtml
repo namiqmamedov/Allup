@@ -1,26 +1,33 @@
-﻿
-@model IEnumerable<Category>
-
+﻿@model Category
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Detail";
     int counter = 1;
 }
+
+
 <div class="row justify-content-between">
     <div class="col-lg-2">
-        <h1 class="h3 mb-4 text-gray-800">Categories Page</h1>
+        <h1 class="h3 mb-4 text-gray-800">Main @Model.Name  Category Page</h1>
     </div>
     <div class="col-lg-1">
-        <a asp-area="manage" asp-controller="category" asp-action="Create" class="btn btn-primary">Create</a>
+        <a asp-area="manage" asp-controller="category" asp-action="index" class="btn btn-primary">Go Home</a>
     </div>
 </div>
-
 <div class="row">
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="~/assets/images/@Model.Image" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Name: @Model.Name</h5>
+                <p class="card-text">Product Count: @Model.Products?.Count()</p>
+            </div>
+        </div>
+    </div>
     <div class="col-lg-12">
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Nº</th>
-                    <th>Image</th>
                     <th>Name</th>
                     <th>Product Count</th>
                     <th>Created At</th>
@@ -28,20 +35,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Category category in Model)
+                @foreach (Category category in Model.Children)
                 {
                     <tr>
                         <td>@counter</td>
-                        <td>
-                            <img width="100px;" src="~/assets/images/@category.Image" alt="Alternate Text" />
-                        </td>
                         <td>@category.Name </td>
-                        <td>@category.Products.Count()</td>
+                        <td>@category.Products?.Count()</td>
                         <td>@category.CreatedAt?.ToString("dd / MM / yyyy")</td>
                         <td>
                             <a class="btn btn-warning" asp-area="manage" asp-controller="category" asp-action="update" asp-route-id="@category.Id">Update</a>
-                            <a class="btn btn-danger" asp-area="manage" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
-                            <a class="btn btn-primary" asp-area="manage" asp-controller="category" asp-action="detail" asp-route-id="@category.Id">Detail</a>
+                            <a class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
 

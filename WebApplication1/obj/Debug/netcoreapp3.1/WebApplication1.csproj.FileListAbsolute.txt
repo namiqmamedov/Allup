@@ -172,3 +172,4 @@ C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\A
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Create.cshtml.g.cs
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_ValidationPartial.cshtml.g.cs
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Update.cshtml.g.cs
+C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Detail.cshtml.g.cs
