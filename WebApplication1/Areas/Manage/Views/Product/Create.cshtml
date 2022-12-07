@@ -1,0 +1,103 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Create";
+    IEnumerable<Category> categories = ViewBag.Categories;
+    IEnumerable<Brand> brands = ViewBag.Brands;
+    IEnumerable<Tag> tags = ViewBag.Tags;
+
+    SelectList selectListBrandItems = new SelectList(brands, nameof(Brand.Id), nameof(Brand.Name));
+    SelectList selectListCategoriesItems = new SelectList(categories, nameof(Category.Id), nameof(Category.Name));
+    SelectList selectListTagsItems = new SelectList(tags, nameof(Tag.Id), nameof(Tag.Name));
+}
+
+<h1>Create Product</h1>
+<div class="mb-3">
+    <form method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label asp-for="Title" for="exampleFormControlInput1" class="form-label">Title</label>
+            <input asp-for="Title" class="form-control" placeholder="Name">
+            <span asp-validation-for="Title" class="text text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price" for="exampleFormControlInput1" class="form-label">Name</label>
+            <input asp-for="Price" class="form-control" placeholder="Name">
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DiscountedPrice" for="exampleFormControlInput1" class="form-label">DiscountedPrice</label>
+            <input asp-for="DiscountedPrice" class="form-control" placeholder="Name">
+            <span asp-validation-for="DiscountedPrice" class="text text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ExTax" for="exampleFormControlInput1" class="form-label">ExTax</label>
+            <input asp-for="ExTax" class="form-control" placeholder="Name">
+            <span asp-validation-for="ExTax" class="text text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Count" for="exampleFormControlInput1" class="form-label">Count</label>
+            <input asp-for="Count" class="form-control" placeholder="Name">
+            <span asp-validation-for="Count" class="text text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" for="exampleFormControlInput1" class="form-label">Description</label>
+            <input asp-for="Description" class="form-control" placeholder="Name">
+            <span asp-validation-for="Description" class="text text-danger"></span>
+        </div>
+        <div class="form-check">
+            <input asp-for="IsNewArrival" class="form-check-input" />
+            <label asp-for="IsNewArrival" class="form-check-label"></label>
+            <span asp-validation-for="IsNewArrival" class="text text-danger"></span>
+        </div>
+        <div class="form-check">
+            <input asp-for="IsBestSeller" class="form-check-input" />
+            <label asp-for="IsBestSeller" class="form-check-label"></label>
+            <span asp-validation-for="IsBestSeller" class="text text-danger"></span>
+        </div>
+        <div class="form-check">
+            <input asp-for="IsFeatured" class="form-check-input" />
+            <label asp-for="IsFeatured" class="form-check-label"></label>
+            <span asp-validation-for="IsFeatured" class="text text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="MainImageFile"></label>
+            <input asp-for="MainImageFile" accept="image/jpeg" class="form-control">
+            <span asp-validation-for="MainImageFile" class="text text-danger"></span>
+        </div>
+        <div  class="form-group">
+            <label asp-for="HoverImageFile"></label>
+            <input asp-for="HoverImageFile" accept="image/jpeg" class="form-control">
+            <span asp-validation-for="HoverImageFile" class="text text-danger"></span>
+        </div>
+        <div  class="form-group">
+            <label asp-for="ProductImagesFiles"></label>
+            <input asp-for="ProductImagesFiles" accept="image/jpeg" class="form-control">
+            <span asp-validation-for="ProductImagesFiles" class="text text-danger"></span>
+        </div>
+        <div id="parentList" class="form-group">
+            <label>Brand</label>
+            <select asp-for="BrandId" class="form-select form-select-lg mb-3" asp-items="selectListBrandItems">
+            </select>
+        </div>
+        <div id="parentList" class="form-group">
+            <label>Category</label>
+            <select asp-for="CategoryId" class="form-select form-select-lg mb-3" asp-items="selectListCategoriesItems">
+            </select>
+        </div>
+        <div id="parentList" class="form-group">
+            <label>Tag</label>
+            <select asp-for="TagIds" class="form-select form-select-lg mb-3" asp-items="selectListTagsItems">
+            </select>
+            <span asp-validation-for="TagIds" class="text text-danger"></span>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+
+</div>
+
+@section script{
+    @await Html.PartialAsync("_ValidationPartial")
+}
+
+

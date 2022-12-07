@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http;
 
 namespace WebApplication1.Models
 {
@@ -36,6 +37,19 @@ namespace WebApplication1.Models
 
         public IEnumerable<ProductImage> ProductImages { get; set; }
         public IEnumerable<ProductTag> ProductTag { get; set; }
+
+        [NotMapped]
+        public IFormFile MainImageFile { get; set; }
+
+        [NotMapped]
+        public IFormFile HoverImageFile { get; set; }
+
+        [NotMapped]
+        public IEnumerable<IFormFile> ProductImagesFiles { get; set; }
+
+        [NotMapped]
+        [MaxLength(3)]
+        public IEnumerable<int> TagIds { get; set; }
 
     }
 }

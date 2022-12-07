@@ -275,8 +275,8 @@ namespace WebApplication1.Areas.Manage.Controllers
             }
 
             Category category = await _context.Categories
-                .Include(c => c.Products.Where(p => p.IsDeleted == false))
-                .Include(c => c.Children.Where(p=> p.IsDeleted == false))
+                .Include(c => c.Products)
+                .Include(c => c.Children)
                 .FirstOrDefaultAsync(c=> c.IsDeleted == false && c.Id == id);
 
             if (category == null)
@@ -289,6 +289,15 @@ namespace WebApplication1.Areas.Manage.Controllers
                 TempData["Error"] = $"Id = {id} li category siline bilmez";
                 return RedirectToAction("Index");
             }
+
+            //category.IsDeleted = true;
+            //category.DeletedBy = "";
+            //category.DeletedAt = DateTime.UtcNow.AddHours(+4);
+
+            //_context.Categories.Remove(category);
+
+            await _context.SaveChangesAsync();
+
             return RedirectToAction("Index");
 
         }
