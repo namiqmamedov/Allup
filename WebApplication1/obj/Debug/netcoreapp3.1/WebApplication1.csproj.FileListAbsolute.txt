@@ -175,3 +175,10 @@ C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\A
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Detail.cshtml.g.cs
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Index.cshtml.g.cs
 C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Create.cshtml.g.cs
+C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Update.cshtml.g.cs
+C:\Users\ACER\Desktop\New folder\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\ACER\Desktop\New folder\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\ACER\Desktop\New folder\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\ACER\Desktop\New folder\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\ACER\Desktop\New folder\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\ACER\Desktop\New folder\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\Register.cshtml.g.cs
