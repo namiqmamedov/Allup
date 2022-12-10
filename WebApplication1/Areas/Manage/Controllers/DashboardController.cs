@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace WebApplication1.Areas.Manage.Controllers
 {
     [Area("manage")]
-    [Authorize] // session olub olmadigini yoxluyur
+    /*[Authorize]*/ // session olub olmadigini yoxluyur yeni login olub olmadigini
     public class DashboardController : Controller
     {      
         public IActionResult Index()

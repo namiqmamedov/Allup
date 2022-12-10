@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,6 +12,7 @@ using WebApplication1.Models;
 namespace WebApplication1.Areas.Manage.Controllers
 {
     [Area("manage")]
+    //[Authorize]
     public class AccountController : Controller
     {
 
@@ -149,10 +151,110 @@ namespace WebApplication1.Areas.Manage.Controllers
         //    return Ok();
         //}
 
-        public IActionResult Index()
+
+        [HttpGet]
+        [Authorize]
+
+        public async Task<IActionResult> Profile()
         {
-            return View();
+            AppUser appUser = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            ProfileVM profileVM = new ProfileVM
+            {
+                Name = appUser.Name,
+                UserName = appUser.UserName,
+                Email = appUser.Email
+            };
+            
+            return View(profileVM);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+
+        public async Task<IActionResult> Profile(ProfileVM profileVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(profileVM);
+            }
+
+            bool check = false;
+
+            AppUser appUser = await _userManager.FindByNameAsync(User.Identity.Name);
+            // eger deyismiyibse data set elemesin
+            if (appUser.Name.ToLowerInvariant() != profileVM.Name.Trim().ToLowerInvariant())
+            {
+                check = true;
+                appUser.Name = profileVM.Name.Trim();
+            }
+
+            if (appUser.NormalizedEmail != profileVM.Email.Trim().ToUpperInvariant())
+            {
+                check = true;
+                appUser.Email = profileVM.Email.Trim();
+            }
+
+            if (appUser.NormalizedUserName != profileVM.UserName.Trim().ToUpperInvariant())
+            {
+                check = true;
+                appUser.UserName = profileVM.UserName.Trim();
+            }
+            //
+
+            if (check)
+            {
+                IdentityResult identityResult = await _userManager.UpdateAsync(appUser);
+
+                if (!identityResult.Succeeded)
+                {
+                    foreach (var item in identityResult.Errors) // Foreache salirqi error list kimi gelir deye
+                    {
+                        ModelState.AddModelError("", item.Description);                                                                                     
+                    }
+                    return View(profileVM);
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(profileVM.CurrentPassword))
+            {
+                if (!await _userManager.CheckPasswordAsync(appUser, profileVM.CurrentPassword))
+                {
+                    ModelState.AddModelError("CurrentPassword", "Email or password is incorrect");
+                    return View(profileVM);    
+                }
+
+                if (profileVM.CurrentPassword == profileVM.Password)
+                {
+                    ModelState.AddModelError("CurrentPassword", "The password you entered is not correct, please try again.");
+                    return View(profileVM);
+                }
+                
+                string token = await _userManager.GeneratePasswordResetTokenAsync(appUser);
+
+                IdentityResult identityResult = await _userManager.ResetPasswordAsync(appUser, token, profileVM.Password);
+
+                if (!identityResult.Succeeded)
+                {
+                    foreach (var item in identityResult.Errors) // Foreache salirqi error list kimi gelir deye
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                    return View(profileVM);
+                }
+            }
+
+            return View();                 
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction("Index", "Login");
+
+        }
     }
 }

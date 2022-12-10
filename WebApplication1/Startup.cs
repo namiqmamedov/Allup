@@ -77,6 +77,7 @@ namespace WebApplication1
             app.UseSession();
 
             app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
